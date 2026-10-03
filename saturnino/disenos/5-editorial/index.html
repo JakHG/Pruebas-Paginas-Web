@@ -171,7 +171,24 @@ footer .wa{display:inline-block;background:#25D366;color:#0b2e17;opacity:1;paddi
   .story-img{padding:0 30px 50px 0}
   .searchbar input{font-size:20px}
 }
-.ribbon{background:#111;color:#eee;text-align:center;font:12px/1 system-ui;padding:8px}.ribbon a{text-decoration:underline}
+
+.pbar{background:#111;color:#eee;font:13px/1 system-ui,sans-serif;position:relative;z-index:45}
+.pbar-in{max-width:1320px;margin:0 auto;padding:0 20px;height:40px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.pbar a,.pbar button{color:#eee;display:inline-flex;align-items:center;gap:6px;opacity:.85;font:inherit}
+.pbar a:hover,.pbar button:hover{opacity:1}
+.pbar .mid{display:flex;align-items:center;gap:6px}
+.pbar .arw{width:30px;height:30px;justify-content:center;border-radius:50%;background:rgba(255,255,255,.08)}
+.pbar .cur{position:relative}
+.pbar .cur>button{padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.08);opacity:1;font-weight:600}
+.pbar .cur>button i{font-style:normal;opacity:.6;font-weight:400}
+.plist{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#1b1b1b;border:1px solid #333;border-radius:14px;padding:8px;min-width:250px;display:none;box-shadow:0 20px 40px rgba(0,0,0,.5)}
+.plist.open{display:block}
+.plist a{display:flex;gap:10px;padding:10px 12px;border-radius:9px;opacity:1;width:100%}
+.plist a:hover,.plist a.on{background:#2a2a2a}
+.plist a b{color:#999;font-weight:400;width:22px}
+.plist .dot{width:12px;height:12px;border-radius:50%;margin-left:auto;align-self:center;border:1px solid #444}
+@media (max-width:760px){.pbar .home span,.pbar .count{display:none}}
+
 .h5{padding:46px 0 100px}
 .h5-top{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.24em;text-transform:uppercase;border-top:1.5px solid var(--ink);border-bottom:1px solid var(--line);padding:12px 0;margin-bottom:28px}
 .h5-title{font-size:clamp(64px,11vw,172px);line-height:.88;letter-spacing:-.04em;font-weight:400}
@@ -195,7 +212,15 @@ footer .wa{display:inline-block;background:#25D366;color:#0b2e17;opacity:1;paddi
 .quote p{font-size:clamp(30px,4vw,54px)}
 @media (max-width:760px){.h5-grid{grid-template-areas:"a a" "t t" "b c";margin-top:20px}.h5-txt{padding-bottom:0}.h5-c{width:100%}.h5-top span:nth-child(3){display:none}.grid .card:nth-child(4n+2){margin-top:0}}
 </style></head><body>
-<div class="ribbon">Propuesta «Editorial» · <a href="../">ver todas las propuestas</a></div>
+<div class="pbar"><div class="pbar-in">
+  <a class="home" href="../../">← <span>Todas las propuestas</span></a>
+  <div class="mid">
+    <a class="arw" href="../4-nude/" title="Anterior: Nude Minimal">‹</a>
+    <div class="cur"><button onclick="this.nextElementSibling.classList.toggle('open')"><i>05/08</i> Editorial ▾</button><div class="plist"><a class="" href="../1-terracota/"><b>01</b>Terracota Artesanal<span class="dot" style="background:#B5543C"></span></a><a class="" href="../2-verde-oro/"><b>02</b>Verde Bosque & Oro<span class="dot" style="background:#1F3A2E"></span></a><a class="" href="../3-noir/"><b>03</b>Noir Boutique<span class="dot" style="background:#8E1B2C"></span></a><a class="" href="../4-nude/"><b>04</b>Nude Minimal<span class="dot" style="background:#E2B9A4"></span></a><a class="on" href="../5-editorial/"><b>05</b>Editorial<span class="dot" style="background:#A33B20"></span></a><a class="" href="../6-atelier-oliva/"><b>06</b>Atelier Oliva<span class="dot" style="background:#3F4A33"></span></a><a class="" href="../7-azul-arena/"><b>07</b>Azul & Arena<span class="dot" style="background:#1B2A41"></span></a><a class="" href="../8-malva-boutique/"><b>08</b>Malva Boutique<span class="dot" style="background:#B98AA0"></span></a></div></div>
+    <a class="arw" href="../6-atelier-oliva/" title="Siguiente: Atelier Oliva">›</a>
+  </div>
+  <span class="count">Propuesta de rediseño</span>
+</div></div>
 
 <div class="topbar"><div class="marq"><span>Envío gratis a todo Chile sobre $60.000</span><span>✦</span><span>Confección artesanal en 5 días hábiles</span><span>✦</span><span>Paga seguro con Webpay</span><span>✦</span><span>Personaliza con grabado láser</span><span>✦</span><span>Envío gratis a todo Chile sobre $60.000</span><span>✦</span><span>Confección artesanal en 5 días hábiles</span><span>✦</span><span>Paga seguro con Webpay</span><span>✦</span><span>Personaliza con grabado láser</span><span>✦</span></div></div>
 <header class="hdr">
