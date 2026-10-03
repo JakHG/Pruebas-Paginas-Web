@@ -1,0 +1,390 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer">
+<title>Saturnino Creaciones — Atelier Oliva</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>:root{--bg:#F4EFE4;--ink:#2F3828;--accent:#B5653B;--bar:#3F4A33;--bar-t:#EDE6D6;--hdr:#F4EFE4;--hdr-t:#2F3828;--line:#DDD5C3;--hover:rgba(63,74,51,.08);--btn:#3F4A33;--btn-t:#F4EFE4;--card:#FBF8F1;--ph:#E5DECD;--tag:#B5653B;--tag-t:#FBF8F1;--price:#3F4A33;--tabs:#E8E1D0;--trust:#E8E1D0;--trust-t:#2F3828;--story:#A3AE8F;--story-t:#232B1D;--steps:#F4EFE4;--lb:#3F4A33;--lb-t:#EDE6D6;--lb-a:#E3B48F;--quote:#B5653B;--quote-t:#FBF3EA;--foot:#2A3322;--foot-t:#E5DECD;--serif:'Marcellus',serif;--sans:'Outfit',sans-serif;--hw:400;--r-btn:999px;--r-card:28px;--r-img:24px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+img{display:block;max-width:100%}
+.wrap{max-width:1320px;margin:0 auto;padding:0 32px}
+.eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);font-weight:600}
+h1,h2,h3{font-family:var(--serif);font-weight:var(--hw);letter-spacing:var(--hls,-.01em)}
+.ic{flex:none}
+/* topbar marquee */
+.topbar{background:var(--bar);color:var(--bar-t);overflow:hidden;font-size:12px;letter-spacing:.14em;text-transform:uppercase;height:36px;display:flex;align-items:center}
+.marq{display:flex;gap:28px;white-space:nowrap;animation:marq 40s linear infinite;padding-left:28px}
+@keyframes marq{to{transform:translateX(-50%)}}
+/* header */
+.hdr{position:sticky;top:0;z-index:40;background:var(--hdr);color:var(--hdr-t);transition:box-shadow .3s,background .3s;border-bottom:1px solid var(--line)}
+.hdr.scrolled{box-shadow:0 8px 30px -18px rgba(0,0,0,.35)}
+.hdr-in{max-width:1320px;margin:0 auto;padding:0 32px;height:84px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.logo{font-family:var(--serif);font-size:32px;line-height:1;text-align:center;font-weight:var(--logo-w,400)}
+.logo small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.46em;margin-top:6px;opacity:.75;font-weight:500}
+.nav{display:flex;gap:30px;align-items:center;font-size:14px;letter-spacing:.03em}
+.nav-r{justify-content:flex-end;gap:22px}
+.nav>a,.dd>a{display:inline-flex;align-items:center;gap:6px;padding:8px 0;position:relative}
+.nav>a:not(.icbtn):not(.cartb):after,.dd>a:after{content:"";position:absolute;left:0;right:100%;bottom:2px;height:1.5px;background:var(--accent);transition:right .25s}
+.nav>a:hover:after,.dd:hover>a:after{right:0}
+.icbtn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;transition:background .2s}
+.icbtn:hover{background:var(--hover)}
+.nav .cartb{flex:none;display:inline-flex;align-items:center;gap:8px;background:var(--btn);color:var(--btn-t);padding:9px 16px;border-radius:var(--r-btn);font-size:13px;font-weight:600}
+.burger{display:none}
+/* mega menu */
+.dd{position:relative}
+.mega{position:absolute;left:-32px;top:100%;padding-top:22px;opacity:0;visibility:hidden;transform:translateY(8px);transition:.25s}
+.dd:hover .mega{opacity:1;visibility:visible;transform:none}
+.mega-in{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:var(--r-card);box-shadow:0 30px 60px -30px rgba(0,0,0,.35);padding:22px;display:grid;grid-template-columns:repeat(3,150px) 220px;gap:18px;width:max-content}
+.mega-in>a img{width:150px;height:180px;object-fit:cover;border-radius:var(--r-img);margin-bottom:10px;transition:transform .4s}
+.mega-in>a:hover img{transform:scale(1.03)}
+.mega-in b{display:block;font-family:var(--serif);font-weight:var(--hw);font-size:18px}
+.mega-in span{font-size:12.5px;opacity:.65}
+.mega-txt{padding:8px 4px 0 10px;border-left:1px solid var(--line)}
+.mega-txt p{font-size:14px;line-height:1.6;opacity:.8;margin:10px 0 14px}
+.link{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid currentColor;padding-bottom:3px}
+/* search */
+.searchbar{max-height:0;overflow:hidden;transition:max-height .3s;background:var(--hdr);border-top:1px solid transparent}
+.searchbar.open{max-height:90px;border-top-color:var(--line)}
+.searchbar .hdr-in{height:72px;grid-template-columns:1fr auto}
+.searchbar input{width:100%;border:0;background:transparent;font:300 26px var(--serif);color:var(--hdr-t);outline:0}
+/* drawer */
+.drawer{position:fixed;inset:0;z-index:60;pointer-events:none}
+.drawer-bg{position:absolute;inset:0;background:rgba(0,0,0,.4);opacity:0;transition:.3s}
+.drawer aside{position:absolute;left:0;top:0;bottom:0;width:min(340px,86vw);background:var(--bg);color:var(--ink);padding:28px;display:flex;flex-direction:column;gap:6px;transform:translateX(-100%);transition:.35s}
+.drawer.open{pointer-events:auto}.drawer.open .drawer-bg{opacity:1}.drawer.open aside{transform:none}
+.drawer aside .logo{text-align:left;margin:4px 0 26px}
+.drawer aside>a{font-family:var(--serif);font-size:24px;padding:10px 0;border-bottom:1px solid var(--line);font-weight:var(--hw)}
+.drawer .close{position:absolute;right:16px;top:16px}
+.drawer .wa-line{font-family:var(--sans);font-size:14px;color:#1a9e4b;border:0;margin-top:auto}
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--btn);color:var(--btn-t);border:1.5px solid var(--btn);border-radius:var(--r-btn);padding:16px 30px;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:.25s}
+.btn:hover{background:transparent;color:var(--btn)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--bg)}
+.btn.light{background:var(--bg);color:var(--ink);border-color:var(--bg)}
+/* trust */
+.trust{background:var(--trust);color:var(--trust-t);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trust-in{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;padding-top:30px;padding-bottom:30px}
+.ti{display:flex;gap:14px;align-items:center}.ti svg{color:var(--accent)}
+.ti b{display:block;font-size:14.5px;font-weight:600}.ti span{font-size:13px;opacity:.7}
+/* sections */
+section{padding:100px 0}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:44px;flex-wrap:wrap}
+.sh h2{font-size:clamp(36px,4.4vw,58px);line-height:1.02;margin-top:12px}
+.center-sh{justify-content:center;text-align:center}
+.center{text-align:center;margin-top:48px}
+/* tabs */
+.tabs{display:flex;gap:8px;background:var(--tabs);padding:6px;border-radius:var(--r-btn)}
+.tabs button{padding:10px 18px;border-radius:var(--r-btn);font-size:13.5px;font-weight:500;transition:.2s;display:flex;gap:8px;align-items:center}
+.tabs button i{font-style:normal;font-size:11px;opacity:.6}
+.tabs button.on{background:var(--btn);color:var(--btn-t)}
+/* grid */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:34px 26px}
+.card{display:block}
+.ph{position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:var(--r-img);background:var(--ph);margin-bottom:16px}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.card:hover .ph img{transform:scale(1.06)}
+.ph.nofoto:after{content:attr(data-n);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;font-family:var(--serif);font-style:italic;font-size:20px;color:var(--accent)}
+.tag{position:absolute;z-index:2;top:14px;left:14px;background:var(--tag);color:var(--tag-t);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;padding:6px 11px;border-radius:var(--r-btn);font-weight:600}
+.quick{position:absolute;z-index:2;left:14px;right:14px;bottom:14px;display:flex;justify-content:center;gap:8px;align-items:center;background:var(--btn);color:var(--btn-t);border-radius:var(--r-btn);padding:13px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;opacity:0;transform:translateY(10px);transition:.3s}
+.card:hover .quick{opacity:1;transform:none}
+.pname{font-family:var(--serif);font-size:22px;font-weight:var(--hw)}
+.pmeta{font-size:13px;opacity:.6;margin:4px 0 8px}
+.price{font-size:15.5px;font-weight:600;color:var(--price)}.price small{font-weight:400;opacity:.6;font-size:12.5px}
+.noresult{display:none;text-align:center;padding:40px;opacity:.7}
+/* story */
+.story{background:var(--story);color:var(--story-t)}
+.story-in{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}
+.story-img{position:relative;padding:0 60px 80px 0}
+.story-img .s-a{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r-img)}
+.story-img .s-b{position:absolute;right:0;bottom:0;width:44%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--r-img);border:8px solid var(--story);box-sizing:content-box}
+.story-txt h2{font-size:clamp(38px,4.6vw,64px);line-height:1.02;margin:14px 0 22px}
+.story-txt p{font-size:17px;line-height:1.75;opacity:.82;margin-bottom:22px}
+.checks{list-style:none;margin:0 0 34px}.checks li{padding:10px 0 10px 30px;border-bottom:1px solid var(--line);position:relative;font-size:15px}
+.checks li:before{content:"✦";position:absolute;left:0;color:var(--accent)}
+/* steps */
+.steps{background:var(--steps)}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);padding:36px 32px}
+.step b{font-family:var(--serif);font-weight:var(--hw);font-size:54px;color:var(--accent);display:block;line-height:1}
+.step h3{font-size:26px;margin:18px 0 10px}.step p{font-size:15.5px;line-height:1.6;opacity:.75}
+/* laser band */
+.laserband{background:var(--lb);color:var(--lb-t)}
+.laserband .eyebrow,.laserband .link{color:var(--lb-a)}
+.hscroll{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 5*22px)/6);gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
+.hscroll .card{scroll-snap-align:start}.hscroll .pname{font-size:18px}
+.laserband .ph{background:rgba(255,255,255,.06)}.laserband .price{color:var(--lb-t)}
+/* quote */
+.quote{background:var(--quote);color:var(--quote-t);text-align:center}
+.quote p{font-family:var(--serif);font-style:italic;font-weight:var(--hw);font-size:clamp(26px,3.2vw,42px);line-height:1.3;max-width:960px;margin:0 auto}
+.quote span{display:block;margin-top:24px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;opacity:.7}
+/* faq */
+.faq-in{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}
+.faq h2{font-size:clamp(36px,4.4vw,58px);line-height:1.02;margin:12px 0 18px}
+.faq-side{opacity:.75;margin-bottom:24px}
+.acc details{border-bottom:1px solid var(--line)}
+.acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:24px 0;font-family:var(--serif);font-size:22px;font-weight:var(--hw)}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary svg{transition:transform .3s;color:var(--accent)}
+.acc details[open] summary svg{transform:rotate(180deg)}
+.acc p{padding:0 0 24px;line-height:1.7;opacity:.78;max-width:640px}
+/* ig */
+.igrid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.igrid a{aspect-ratio:1;overflow:hidden;border-radius:var(--r-img);background:var(--ph)}
+.igrid img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.igrid a:hover img{transform:scale(1.07)}
+/* footer */
+footer{background:var(--foot);color:var(--foot-t);padding:80px 0 34px;font-size:14px}
+.fcols{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:40px}
+footer .logo{text-align:left}.fdesc{margin-top:18px;opacity:.72;max-width:300px;line-height:1.7}
+footer h5{font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;margin-bottom:16px;opacity:.55;font-weight:600}
+footer a{display:block;padding:5px 0;opacity:.85}footer a:hover{opacity:1}
+footer .wa{display:inline-block;background:#25D366;color:#0b2e17;opacity:1;padding:9px 16px;border-radius:999px;font-weight:600;margin-bottom:8px}
+.pay{display:block;opacity:.6;margin-top:6px}
+.legal{border-top:1px solid rgba(255,255,255,.14);margin-top:56px;padding-top:22px;display:flex;justify-content:space-between;font-size:12px;opacity:.6}
+.fab{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 26px -8px rgba(0,0,0,.4);z-index:50;transition:transform .2s}.fab:hover{transform:scale(1.08)}
+.totop{position:fixed;right:30px;bottom:94px;width:42px;height:42px;border-radius:50%;background:var(--card);color:var(--ink);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;z-index:50;opacity:0;pointer-events:none;transition:.3s}
+.totop.show{opacity:1;pointer-events:auto}
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.marq{animation:none}}
+/* responsive */
+@media (max-width:1080px){
+  .nav-l,.nav-r>a:not(.cartb):not(.icbtn){display:none}.burger{display:inline-flex}
+  .hdr-in{grid-template-columns:auto 1fr auto;height:70px;padding:0 16px}.logo{font-size:26px}
+  .nav-r{gap:6px}.nav .cartb{padding:8px 13px}.hdr-in{grid-template-columns:44px 1fr auto}.nav-r .icbtn[aria-label=Instagram]{display:none}
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .hscroll{grid-auto-columns:30%}
+  .story-in,.faq-in{grid-template-columns:1fr;gap:50px}
+  .igrid{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:760px){
+  .wrap{padding:0 18px}section{padding:64px 0}
+  .grid{grid-template-columns:repeat(2,1fr);gap:24px 14px}
+  .pname{font-size:18px}.pmeta{display:none}.quick{display:none}
+  .trust-in{grid-template-columns:1fr 1fr;gap:16px}.ti span{display:none}
+  .sgrid{grid-template-columns:1fr}
+  .hscroll{grid-auto-columns:46%}
+  .tabs{width:100%;overflow-x:auto}.tabs button{white-space:nowrap}
+  .fcols{grid-template-columns:1fr 1fr}.legal{flex-direction:column;gap:6px}
+  .story-img{padding:0 30px 50px 0}
+  .searchbar input{font-size:20px}
+}
+.ribbon{background:#111;color:#eee;text-align:center;font:12px/1 system-ui;padding:8px}.ribbon a{text-decoration:underline}
+.h6{padding:40px 0 80px}
+.h6-in{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
+.h6-main{position:relative}
+.h6-main>img{width:100%;aspect-ratio:4/4.6;object-fit:cover;border-radius:220px 220px 28px 28px;background:var(--ph)}
+.h6-badge{position:absolute;top:30px;right:-30px;width:132px;height:132px;background:var(--accent);color:#FBF3EA;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.h6-badge svg{position:absolute;inset:0;animation:spin 18s linear infinite;font:500 9.6px var(--sans);letter-spacing:.2em;fill:currentColor}
+.h6-badge span{font-size:22px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.h6-float{position:absolute;left:-26px;bottom:40px;background:var(--card);padding:18px 22px;border-radius:20px;box-shadow:0 20px 40px -20px rgba(0,0,0,.3);display:grid;gap:4px}
+.h6-float b{font-family:var(--serif);font-weight:400;font-size:20px}.h6-float span{font-size:13px;opacity:.7}.h6-float .link{margin-top:6px;font-size:12px}
+.h6-side h1{font-size:clamp(50px,6.4vw,94px);line-height:.98;margin:18px 0 22px}
+.h6-side h1 i{font-family:'Outfit';font-weight:300;font-style:italic;color:var(--accent)}
+.h6-side p{font-size:18px;line-height:1.65;opacity:.8;max-width:470px;margin-bottom:32px}
+.h6-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:46px}
+.h6-cats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.h6-cats a{display:block;background:var(--card);border-radius:20px;padding:10px;transition:transform .25s}
+.h6-cats a:hover{transform:translateY(-4px)}
+.h6-cats img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px;background:var(--ph)}
+.h6-cats span{display:block;padding:10px 4px 4px;font-size:14px;font-weight:500}
+.ph{border-radius:24px}.card .ph{border-radius:160px 160px 24px 24px}.card .tag{top:auto;bottom:14px}.card:hover .tag{opacity:0}
+.story .eyebrow{color:#4B2A16}.story .checks li{border-color:rgba(0,0,0,.15)}.story .checks li:before{color:#4B2A16}
+.step{text-align:center}.step b{width:84px;height:84px;border-radius:50%;background:var(--ph);display:flex;align-items:center;justify-content:center;margin:0 auto;font-size:34px}
+.quote .wrap{max-width:1000px}
+@media (max-width:1080px){.h6-in{grid-template-columns:1fr}.h6-badge{right:10px}.h6-float{left:10px}}
+@media (max-width:760px){.h6-badge{width:96px;height:96px;top:14px}.h6-badge svg{font-size:9px}.h6-main>img{border-radius:160px 160px 24px 24px}}
+</style></head><body>
+<div class="ribbon">Propuesta «Atelier Oliva» · <a href="../">ver todas las propuestas</a></div>
+
+<div class="topbar"><div class="marq"><span>Envío gratis a todo Chile sobre $60.000</span><span>✦</span><span>Confección artesanal en 5 días hábiles</span><span>✦</span><span>Paga seguro con Webpay</span><span>✦</span><span>Personaliza con grabado láser</span><span>✦</span><span>Envío gratis a todo Chile sobre $60.000</span><span>✦</span><span>Confección artesanal en 5 días hábiles</span><span>✦</span><span>Paga seguro con Webpay</span><span>✦</span><span>Personaliza con grabado láser</span><span>✦</span></div></div>
+<header class="hdr">
+  <div class="hdr-in">
+    <button class="icbtn burger" aria-label="Menú" onclick="toggleDrawer(true)"><svg class="ic " width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+    <nav class="nav nav-l">
+      <div class="dd"><a href="#tienda">Tienda <svg class="ic " width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a><div class="mega"><div class="mega-in">
+      <a href="#tienda" data-go="carteras"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/70131179/thumb/306/407?1764081582" alt="Modelo Carmesí"><b>Carteras tejidas</b><span>Desde $23.000</span></a>
+      <a href="#tienda" data-go="laser"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908435/thumb/306/407?1763615950" alt="Lámpara Granito Café"><b>Grabado láser</b><span>Desde $2.000</span></a>
+      <a href="#personaliza"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908426/thumb/306/407?1763615870" alt="Caja de madera personalizada"><b>Personalizados</b><span>Tu nombre o diseño</span></a>
+      <div class="mega-txt"><div class="eyebrow">Hecho por encargo</div><p>Cada pieza se confecciona para ti en 5 días hábiles.</p>
+        <a class="link" href="https://api.whatsapp.com/send?phone=56956749191&text=Hola!%20Quiero%20un%20dise%C3%B1o%20a%20medida" target="_blank">Pedir diseño a medida <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    </div></div></div>
+      <a href="#tienda" data-go="carteras">Carteras</a>
+      <a href="#tienda" data-go="laser">Grabado láser</a>
+    </nav>
+    <a class="logo" href="#">Saturnino<small>CREACIONES</small></a>
+    <nav class="nav nav-r">
+      <a href="#taller">Nuestro taller</a>
+      <a href="#faq">Ayuda</a>
+      <a class="icbtn" href="https://www.instagram.com/saturnino.creaciones" target="_blank" aria-label="Instagram"><svg class="ic " width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+      <button class="icbtn" aria-label="Buscar" onclick="openSearch()"><svg class="ic " width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+      <a class="cartb" href="https://saturninocreaciones.com/cart" target="_blank"><svg class="ic " width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6zM9 8V6a3 3 0 0 1 6 0v2"/></svg><span>0</span></a>
+    </nav>
+  </div>
+  <div class="searchbar" id="sb"><div class="hdr-in"><input id="q" placeholder="Busca una cartera, un grabado…" oninput="doSearch(this.value)"><button class="icbtn" onclick="openSearch()"><svg class="ic " width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div></div>
+</header>
+<div class="drawer" id="drawer">
+  <div class="drawer-bg" onclick="toggleDrawer(false)"></div>
+  <aside><button class="icbtn close" onclick="toggleDrawer(false)"><svg class="ic " width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+    <div class="logo">Saturnino<small>CREACIONES</small></div>
+    <a href="#tienda" data-go="all" onclick="toggleDrawer(false)">Toda la tienda</a>
+    <a href="#tienda" data-go="carteras" onclick="toggleDrawer(false)">Carteras tejidas</a>
+    <a href="#tienda" data-go="laser" onclick="toggleDrawer(false)">Grabado láser</a>
+    <a href="#personaliza" onclick="toggleDrawer(false)">Personalizados</a>
+    <a href="#taller" onclick="toggleDrawer(false)">Nuestro taller</a>
+    <a href="#faq" onclick="toggleDrawer(false)">Preguntas frecuentes</a>
+    <a class="wa-line" href="https://api.whatsapp.com/send?phone=56956749191&text=Hola%20Saturnino%20Creaciones!" target="_blank">WhatsApp +56 9 5674 9191</a>
+  </aside>
+</div><section class="h6"><div class="wrap h6-in">
+  <div class="h6-main"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/70131179/thumb/760/1013?1764081582" alt="Modelo Carmesí">
+    <div class="h6-badge"><svg viewBox="0 0 100 100"><defs><path id="cp" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/></defs><text><textPath href="#cp">HECHO A MANO · CHILE · POR ENCARGO ·</textPath></text></svg><span>✦</span></div>
+    <div class="h6-float"><b>Modelo Carmesí</b><span>Tejida a mano · desde $40.000</span><a class="link" href="https://saturninocreaciones.com/modelo-carmesi" target="_blank">Ver <svg class="ic " width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+  <div class="h6-side">
+    <div class="eyebrow">Atelier artesanal</div>
+    <h1>Piezas hechas<br>con <i>calma</i></h1>
+    <p>Carteras tejidas en tonos tierra, asas de madera noble y grabados láser con tu nombre.</p>
+    <div class="h6-btns"><a class="btn" href="#tienda">Comprar ahora</a><a class="btn ghost" href="#personaliza">Personalizar</a></div>
+    <div class="h6-cats">
+      <a href="#tienda" data-go="carteras"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908385/thumb/306/407?1763615361" alt="Modelo Aura"><span>Carteras</span></a>
+      <a href="#tienda" data-go="laser"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908423/thumb/306/407?1763615814" alt="Porta vinos Nintai"><span>Grabado láser</span></a>
+      <a href="#personaliza"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908466/thumb/306/407?1764209750" alt="Set 6 porta vasos"><span>Regalos</span></a>
+    </div>
+  </div>
+</div></section><div class="trust"><div class="wrap trust-in"><div class="ti"><svg class="ic " width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11V5a1.5 1.5 0 0 1 3 0v5M10 10V3.5a1.5 1.5 0 0 1 3 0V10M13 10V4.5a1.5 1.5 0 0 1 3 0V12M16 8.5a1.5 1.5 0 0 1 3 0V14a7 7 0 0 1-7 7h-1a6 6 0 0 1-5-3l-2.5-4a1.5 1.5 0 0 1 2.5-1.6L7 14"/></svg><div><b>Hecho a mano en Chile</b><span>Cada pieza se teje por encargo</span></div></div><div class="ti"><svg class="ic " width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/></svg><div><b>Personalizable</b><span>Grabado láser con tu nombre o diseño</span></div></div><div class="ti"><svg class="ic " width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11v9H3zM14 9h4l3 3v3h-7"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg><div><b>Envío a todo Chile</b><span>Gratis sobre $60.000</span></div></div><div class="ti"><svg class="ic " width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><div><b>Pago seguro Webpay</b><span>Crédito, débito y transferencia</span></div></div></div></div><section id="tienda" class="shop"><div class="wrap">
+  <div class="sh"><div><div class="eyebrow">La tienda</div><h2>Lo más querido</h2></div>
+    <div class="tabs" role="tablist">
+      <button class="on" data-f="all">Todo <i>16</i></button>
+      <button data-f="carteras">Carteras <i>10</i></button>
+      <button data-f="laser">Grabado láser <i>6</i></button>
+    </div></div>
+  <div class="grid" id="grid"><a class="card" data-cat="carteras" href="https://saturninocreaciones.com/modelo-carmesi" target="_blank" rel="noopener">
+  <div class="ph"><span class="tag">Más vendido</span><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/70131179/thumb/760/1013?1764081582" alt="Modelo Carmesí"><span class="quick">Ver producto <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  <div class="pinfo"><div class="pname">Modelo Carmesí</div><div class="pmeta">Tejida a mano · asa de madera grabada</div><div class="price"><small>desde</small> $40.000</div></div>
+</a><a class="card" data-cat="carteras" href="https://saturninocreaciones.com/modelo-runa" target="_blank" rel="noopener">
+  <div class="ph"><span class="tag">Nuevo</span><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/70144388/thumb/760/1013?1764116839" alt="Modelo Runa"><span class="quick">Ver producto <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  <div class="pinfo"><div class="pname">Modelo Runa</div><div class="pmeta">Tejida a mano · asa de madera grabada</div><div class="price"><small>desde</small> $45.000</div></div>
+</a><a class="card" data-cat="carteras" href="https://saturninocreaciones.com/modelo-catrina" target="_blank" rel="noopener">
+  <div class="ph"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69957630/thumb/760/1013?1763735918" alt="Modelo Catrina"><span class="quick">Ver producto <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  <div class="pinfo"><div class="pname">Modelo Catrina</div><div class="pmeta">Tejida a mano · asa de madera grabada</div><div class="price"><small>desde</small> $50.000</div></div>
+</a><a class="card" data-cat="carteras" href="https://saturninocreaciones.com/modelo-aurora" target="_blank" rel="noopener">
+  <div class="ph"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908363/thumb/760/1013?1763615116" alt="Modelo Aurora"><span class="quick">Ver producto <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  <div class="pinfo"><div class="pname">Modelo Aurora</div><div class="pmeta">Tejida a mano · asa de madera grabada</div><div class="price"><small>desde</small> $60.000</div></div>
+</a><a class="card" data-cat="carteras" href="https://saturninocreaciones.com/modelo-aura" target="_blank" rel="noopener">
+  <div class="ph"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908385/thumb/760/1013?1763615361" alt="Modelo Aura"><span class="quick">Ver producto <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  <div class="pinfo"><div class="pname">Modelo Aura</div><div class="pmeta">Tejida a mano · asa de madera grabada</div><div class="price"><small>desde</small> $57.000</div></div>
+</a><a class="card" data-cat="carteras" href="https://saturninocreaciones.com/modelo-enredados" target="_blank" rel="noopener">
+  <div class="ph"><span class="tag">Edición especial</span><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908373/thumb/760/1013?1763615209" alt="Modelo Enredados"><span class="quick">Ver producto <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  <div class="pinfo"><div class="pname">Modelo Enredados</div><div class="pmeta">Tejida a mano · asa de madera grabada</div><div class="price"><small>desde</small> $66.000</div></div>
+</a><a class="card" data-cat="carteras" href="https://saturninocreaciones.com/modelo-carmesi-copiar" target="_blank" rel="noopener">
+  <div class="ph"><span class="tag">Nuevo</span><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/70807371/thumb/760/1013?1766151022" alt="Modelo Coral"><span class="quick">Ver producto <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  <div class="pinfo"><div class="pname">Modelo Coral</div><div class="pmeta">Tejida a mano · asa de madera grabada</div><div class="price"><small>desde</small> $45.000</div></div>
+</a><a class="card" data-cat="carteras" href="https://saturninocreaciones.com/modelo-ramoo" target="_blank" rel="noopener">
+  <div class="ph"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69957304/thumb/760/1013?1763735344" alt="Modelo Ramoo"><span class="quick">Ver producto <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  <div class="pinfo"><div class="pname">Modelo Ramoo</div><div class="pmeta">Tejida a mano · asa de madera grabada</div><div class="price"><small>desde</small> $47.500</div></div>
+</a><a class="card" data-cat="carteras" href="https://saturninocreaciones.com/modelu-sunny" target="_blank" rel="noopener">
+  <div class="ph"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908400/thumb/760/1013?1763615540" alt="Modelo Sunny"><span class="quick">Ver producto <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  <div class="pinfo"><div class="pname">Modelo Sunny</div><div class="pmeta">Tejida a mano · asa de madera grabada</div><div class="price"><small>desde</small> $40.000</div></div>
+</a><a class="card" data-cat="carteras" href="https://saturninocreaciones.com/modelo-nube" target="_blank" rel="noopener">
+  <div class="ph"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69957355/thumb/760/1013?1763735392" alt="Modelo Nube"><span class="quick">Ver producto <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  <div class="pinfo"><div class="pname">Modelo Nube</div><div class="pmeta">Tejida a mano · asa de madera grabada</div><div class="price"><small>desde</small> $23.000</div></div>
+</a><a class="card" data-cat="laser" href="https://saturninocreaciones.com/lampara-de-madera-grabada" target="_blank" rel="noopener">
+  <div class="ph"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908435/thumb/760/1013?1763615950" alt="Lámpara Granito Café"><span class="quick">Ver producto <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  <div class="pinfo"><div class="pname">Lámpara Granito Café</div><div class="pmeta">Madera grabada con láser</div><div class="price">$60.000</div></div>
+</a><a class="card" data-cat="laser" href="https://saturninocreaciones.com/porta-vinos-nintai" target="_blank" rel="noopener">
+  <div class="ph"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908423/thumb/760/1013?1763615814" alt="Porta vinos Nintai"><span class="quick">Ver producto <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  <div class="pinfo"><div class="pname">Porta vinos Nintai</div><div class="pmeta">Madera grabada con láser</div><div class="price">$35.000</div></div>
+</a><a class="card" data-cat="laser" href="https://saturninocreaciones.com/caja-de-madera" target="_blank" rel="noopener">
+  <div class="ph"><span class="tag">Personalizable</span><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908426/thumb/760/1013?1763615870" alt="Caja de madera personalizada"><span class="quick">Ver producto <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  <div class="pinfo"><div class="pname">Caja de madera personalizada</div><div class="pmeta">Madera grabada con láser</div><div class="price"><small>desde</small> $10.000</div></div>
+</a><a class="card" data-cat="laser" href="https://saturninocreaciones.com/porta-vasos-personalizados" target="_blank" rel="noopener">
+  <div class="ph"><span class="tag">Personalizable</span><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908466/thumb/760/1013?1764209750" alt="Set 6 porta vasos"><span class="quick">Ver producto <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  <div class="pinfo"><div class="pname">Set 6 porta vasos</div><div class="pmeta">Madera grabada con láser</div><div class="price"><small>desde</small> $4.000</div></div>
+</a><a class="card" data-cat="laser" href="https://saturninocreaciones.com/tarjetas-de-presentacionnegocios" target="_blank" rel="noopener">
+  <div class="ph"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908453/thumb/760/1013?1763616190" alt="Tarjetas de presentación"><span class="quick">Ver producto <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  <div class="pinfo"><div class="pname">Tarjetas de presentación</div><div class="pmeta">Madera grabada con láser</div><div class="price"><small>desde</small> $2.000</div></div>
+</a><a class="card" data-cat="laser" href="https://saturninocreaciones.com/porta-tarjetas" target="_blank" rel="noopener">
+  <div class="ph"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908457/thumb/760/1013?1763616246" alt="Porta tarjetas"><span class="quick">Ver producto <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  <div class="pinfo"><div class="pname">Porta tarjetas</div><div class="pmeta">Madera grabada con láser</div><div class="price">$3.000</div></div>
+</a></div>
+  <p class="noresult" id="nores">No encontramos productos con esa búsqueda.</p>
+  <div class="center"><a class="btn ghost" href="https://saturninocreaciones.com/all" target="_blank">Ver tienda completa <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+</div></section><section class="laserband"><div class="wrap">
+  <div class="sh"><div><div class="eyebrow">Precisión láser</div><h2>Grabados que<br>cuentan tu historia</h2></div>
+  <a class="link" href="https://saturninocreaciones.com/grabados-laser" target="_blank">Ver grabados <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  <div class="hscroll"><a class="card" data-cat="laser" href="https://saturninocreaciones.com/lampara-de-madera-grabada" target="_blank" rel="noopener">
+  <div class="ph"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908435/thumb/760/1013?1763615950" alt="Lámpara Granito Café"><span class="quick">Ver producto <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  <div class="pinfo"><div class="pname">Lámpara Granito Café</div><div class="price">$60.000</div></div>
+</a><a class="card" data-cat="laser" href="https://saturninocreaciones.com/porta-vinos-nintai" target="_blank" rel="noopener">
+  <div class="ph"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908423/thumb/760/1013?1763615814" alt="Porta vinos Nintai"><span class="quick">Ver producto <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  <div class="pinfo"><div class="pname">Porta vinos Nintai</div><div class="price">$35.000</div></div>
+</a><a class="card" data-cat="laser" href="https://saturninocreaciones.com/caja-de-madera" target="_blank" rel="noopener">
+  <div class="ph"><span class="tag">Personalizable</span><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908426/thumb/760/1013?1763615870" alt="Caja de madera personalizada"><span class="quick">Ver producto <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  <div class="pinfo"><div class="pname">Caja de madera personalizada</div><div class="price"><small>desde</small> $10.000</div></div>
+</a><a class="card" data-cat="laser" href="https://saturninocreaciones.com/porta-vasos-personalizados" target="_blank" rel="noopener">
+  <div class="ph"><span class="tag">Personalizable</span><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908466/thumb/760/1013?1764209750" alt="Set 6 porta vasos"><span class="quick">Ver producto <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  <div class="pinfo"><div class="pname">Set 6 porta vasos</div><div class="price"><small>desde</small> $4.000</div></div>
+</a><a class="card" data-cat="laser" href="https://saturninocreaciones.com/tarjetas-de-presentacionnegocios" target="_blank" rel="noopener">
+  <div class="ph"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908453/thumb/760/1013?1763616190" alt="Tarjetas de presentación"><span class="quick">Ver producto <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  <div class="pinfo"><div class="pname">Tarjetas de presentación</div><div class="price"><small>desde</small> $2.000</div></div>
+</a><a class="card" data-cat="laser" href="https://saturninocreaciones.com/porta-tarjetas" target="_blank" rel="noopener">
+  <div class="ph"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908457/thumb/760/1013?1763616246" alt="Porta tarjetas"><span class="quick">Ver producto <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+  <div class="pinfo"><div class="pname">Porta tarjetas</div><div class="price">$3.000</div></div>
+</a></div>
+</div></section><section id="taller" class="story"><div class="wrap story-in">
+  <div class="story-img"><img class="s-a" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908373/thumb/760/1013?1763615209" alt="Modelo Enredados"><img class="s-b" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69957630/thumb/306/407?1763735918" alt="Modelo Catrina"></div>
+  <div class="story-txt">
+    <div class="eyebrow">Nuestro taller</div>
+    <h2>Del taller<br>a tus manos</h2>
+    <p>Cada cartera Saturnino se teje punto a punto y se termina con asas de madera cortadas y grabadas con láser. No producimos en serie: tu pieza se confecciona cuando la pides.</p>
+    <ul class="checks"><li>Tejido artesanal, pieza por pieza</li><li>Madera grabada con precisión láser</li><li>Detalles personalizables: etiqueta, llavero, iniciales</li></ul>
+    <a class="btn" href="#tienda">Ver la colección <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</div></section><section id="personaliza" class="steps"><div class="wrap">
+  <div class="sh"><div><div class="eyebrow">Personaliza la tuya</div><h2>Así de simple</h2></div>
+  <a class="link" href="https://api.whatsapp.com/send?phone=56956749191&text=Hola!%20Quiero%20personalizar%20una%20pieza" target="_blank">Solicitar diseño a medida <svg class="ic " width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  <div class="sgrid"><div class="step"><b>01</b><h3>Elige tu modelo</h3><p>Carmesí, Runa, Aurora… o pídenos uno nuevo.</p></div><div class="step"><b>02</b><h3>Personaliza</h3><p>Etiqueta Signature, llavero corazón o grabado con tu nombre.</p></div><div class="step"><b>03</b><h3>La hacemos para ti</h3><p>5 días hábiles de confección y despacho a todo Chile.</p></div></div></div></section><section class="quote"><div class="wrap">
+  <p>“Aquí va una reseña real de una clienta, copiada de Instagram o WhatsApp con su permiso.”</p>
+  <span>— Nombre, Ciudad</span></div></section><section id="faq" class="faq"><div class="wrap faq-in">
+  <div><div class="eyebrow">Ayuda</div><h2>Preguntas<br>frecuentes</h2>
+  <p class="faq-side">¿Otra duda? Te respondemos por WhatsApp.</p>
+  <a class="btn" href="https://api.whatsapp.com/send?phone=56956749191&text=Hola!%20Tengo%20una%20pregunta" target="_blank">Escríbenos</a></div>
+  <div class="acc"><details open><summary>¿Cuánto demora mi pedido?<svg class="ic " width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary><p>Cada pieza se confecciona por encargo: 5 días hábiles de elaboración antes del despacho, más el tiempo del courier según tu región.</p></details><details><summary>¿Hacen envíos a regiones?<svg class="ic " width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary><p>Sí, enviamos a todo Chile. El despacho es gratis en compras sobre $60.000; bajo ese monto el costo se calcula al pagar.</p></details><details><summary>¿Puedo personalizar mi cartera?<svg class="ic " width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary><p>Sí. Puedes agregar etiqueta Signature, llavero corazón grabado o subir tu propia imagen para los accesorios al comprar.</p></details><details><summary>¿Qué medios de pago aceptan?<svg class="ic " width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary><p>Webpay Plus (crédito y débito) y transferencia bancaria, en una pasarela certificada y encriptada.</p></details><details><summary>¿Hacen diseños a medida?<svg class="ic " width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary><p>Sí. Escríbenos por WhatsApp con tu idea y te ayudamos a crear una pieza única.</p></details></div></div></section><section class="ig"><div class="wrap">
+  <div class="sh center-sh"><div><div class="eyebrow">Comunidad</div><h2>@saturnino.creaciones</h2></div></div>
+  <div class="igrid"><a href="https://www.instagram.com/saturnino.creaciones" target="_blank"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908385/thumb/306/407?1763615361" alt="Modelo Aura"></a><a href="https://www.instagram.com/saturnino.creaciones" target="_blank"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908423/thumb/306/407?1763615814" alt="Porta vinos Nintai"></a><a href="https://www.instagram.com/saturnino.creaciones" target="_blank"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908400/thumb/306/407?1763615540" alt="Modelo Sunny"></a><a href="https://www.instagram.com/saturnino.creaciones" target="_blank"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/70807371/thumb/306/407?1766151022" alt="Modelo Coral"></a><a href="https://www.instagram.com/saturnino.creaciones" target="_blank"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908466/thumb/306/407?1764209750" alt="Set 6 porta vasos"></a><a href="https://www.instagram.com/saturnino.creaciones" target="_blank"><img class="" loading="lazy" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69957304/thumb/306/407?1763735344" alt="Modelo Ramoo"></a></div></div></section><footer><div class="wrap">
+  <div class="fcols">
+    <div><div class="logo">Saturnino<small>CREACIONES</small></div><p class="fdesc">Carteras tejidas a mano y piezas grabadas con láser. Diseño chileno, hecho por encargo.</p></div>
+    <div><h5>Tienda</h5><a href="#tienda" data-go="carteras">Carteras</a><a href="#tienda" data-go="laser">Grabado láser</a><a href="#personaliza">Personalizados</a></div>
+    <div><h5>Ayuda</h5><a href="#faq">Preguntas frecuentes</a><a href="https://saturninocreaciones.com/terminos-y-condiciones" target="_blank">Términos y condiciones</a><a href="https://saturninocreaciones.com/politica-de-reembolso" target="_blank">Cambios y devoluciones</a><a href="https://saturninocreaciones.com/politica-de-privacidad" target="_blank">Privacidad</a></div>
+    <div><h5>Hablemos</h5><a class="wa" href="https://api.whatsapp.com/send?phone=56956749191&text=Hola%20Saturnino%20Creaciones!" target="_blank">WhatsApp +56 9 5674 9191</a><a href="https://www.instagram.com/saturnino.creaciones" target="_blank">@saturnino.creaciones</a><span class="pay">Pagos con Webpay Plus</span></div>
+  </div>
+  <div class="legal"><span>© 2026 Saturnino Creaciones</span><span>Hecho con dedicación en Chile</span></div>
+</div></footer>
+<a class="fab" href="https://api.whatsapp.com/send?phone=56956749191&text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" aria-label="WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg></a>
+<a class="totop" href="#" aria-label="Volver arriba">↑</a><script>
+function setFilter(f){
+  document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.f===f));
+  document.querySelectorAll('#grid .card').forEach(c=>c.style.display=(f==='all'||c.dataset.cat===f)?'':'none');
+  document.getElementById('nores').style.display='none';
+}
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>setFilter(b.dataset.f));
+document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',()=>setFilter(a.dataset.go)));
+function toggleDrawer(o){document.getElementById('drawer').classList.toggle('open',o)}
+function openSearch(){const s=document.getElementById('sb');s.classList.toggle('open');if(s.classList.contains('open')){document.getElementById('q').focus()}else{document.getElementById('q').value='';doSearch('')}}
+function doSearch(v){
+  v=v.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');let n=0;
+  document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.f==='all'));
+  document.querySelectorAll('#grid .card').forEach(c=>{const t=c.querySelector('.pname').textContent.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');const ok=t.includes(v);c.style.display=ok?'':'none';n+=ok});
+  document.getElementById('nores').style.display=n?'none':'block';
+  if(v)document.getElementById('tienda').scrollIntoView({behavior:'smooth'});
+}
+const hdr=document.querySelector('.hdr'),tt=document.querySelector('.totop');
+addEventListener('scroll',()=>{hdr.classList.toggle('scrolled',scrollY>40);tt.classList.toggle('show',scrollY>900)},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('section .sh, .card, .step, .story-txt, .ti').forEach(el=>{el.classList.add('rv');io.observe(el)});
+document.addEventListener('error',e=>{const i=e.target;if(i.tagName!=='IMG')return;if(!i.dataset.r){i.dataset.r=1;i.src=i.src.split('?')[0];return}
+  i.style.opacity=0;const ph=i.parentElement;ph.classList.add('nofoto');ph.dataset.n=i.alt},true);
+</script></body></html>
