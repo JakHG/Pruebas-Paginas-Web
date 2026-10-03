@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saturnino Creaciones — Propuesta Nude Minimal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBF8F5; --nude:#F3E9E2; --blush:#E9D2C5; --terra:#C27C68;
+  --navy:#22303C; --line:#ECE2DA; --quote:#EFDFD5;
+  --serif:'Fraunces',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--navy);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+img.fail{opacity:0}
+.ph.nofoto:after{content:attr(data-n);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;font-family:var(--serif);font-style:italic;font-size:18px;color:var(--terra)}
+.wrap{max-width:1296px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--terra);font-weight:600}
+.serif{font-family:var(--serif);font-weight:300}
+
+/* Demo ribbon */
+.demo{background:#fff3cd;color:#5c4400;text-align:center;font-size:12.5px;padding:7px 12px}
+
+/* Bar + header */
+.bar{background:var(--navy);color:#F3E7DF;text-align:center;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:10px 16px}
+header{position:sticky;top:0;z-index:20;background:rgba(251,248,245,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:78px}
+.logo{font-family:var(--serif);font-size:30px;line-height:1}
+.logo small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.42em;margin-top:5px;opacity:.75}
+nav{display:flex;gap:34px;font-size:14px;letter-spacing:.04em}
+nav a{padding-bottom:4px;border-bottom:1.5px solid transparent;transition:border-color .2s}
+nav a:hover,nav a.on{border-color:var(--terra)}
+.hright{display:flex;gap:18px;align-items:center;font-size:14px}
+.cart{background:var(--navy);color:var(--bg);padding:8px 16px;border-radius:999px;font-size:13px}
+.burger{display:none;background:none;border:0;font-size:26px;color:var(--navy);cursor:pointer}
+
+/* Buttons */
+.btn{display:inline-block;background:var(--navy);color:var(--bg);border:1.5px solid var(--navy);border-radius:999px;
+  padding:16px 32px;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:.2s;margin:0 10px 10px 0}
+.btn:hover{background:transparent;color:var(--navy)}
+.btn.ghost{background:transparent;color:var(--navy)}
+.btn.ghost:hover{background:var(--navy);color:var(--bg)}
+
+/* Hero */
+.hero{background:var(--nude);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;padding-top:64px;padding-bottom:72px}
+.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(46px,6.4vw,92px);line-height:.98;margin:18px 0 22px;letter-spacing:-.01em}
+.hero h1 i{font-style:italic}
+.hero p{font-size:18px;line-height:1.65;opacity:.82;max-width:520px;margin-bottom:34px}
+.rating{margin-top:24px;font-size:14px;opacity:.75}
+.hero-img{position:relative;display:flex;justify-content:center;align-items:center;min-height:520px}
+.hero-img:before{content:"";position:absolute;width:92%;aspect-ratio:1;top:50%;left:50%;transform:translate(-50%,-50%);
+  background:var(--blush);border-radius:46% 54% 40% 60%/50% 40% 60% 50%}
+.hero-img .main{position:relative;width:62%;max-width:380px;aspect-ratio:3/4;object-fit:cover;border-radius:24px;box-shadow:0 24px 50px -20px rgba(34,48,60,.35)}
+.hero-img .side{position:absolute;width:30%;max-width:190px;aspect-ratio:3/4;object-fit:cover;border-radius:18px;box-shadow:0 16px 36px -14px rgba(34,48,60,.35)}
+.hero-img .s1{left:2%;bottom:6%;transform:rotate(-6deg)}
+.hero-img .s2{right:2%;top:8%;transform:rotate(5deg)}
+
+/* Trust */
+.trust{background:#fff;border-bottom:1px solid var(--line)}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:28px;padding-bottom:28px}
+.ti{display:flex;gap:12px;align-items:center}
+.ti svg{flex:none;width:26px;height:26px;stroke:var(--terra);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.ti b{display:block;font-size:14.5px;font-weight:600}
+.ti span{font-size:13px;opacity:.68}
+
+/* Sections */
+section{padding:88px 0}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:40px}
+.sh h2{font-family:var(--serif);font-weight:300;font-size:clamp(34px,4vw,52px);line-height:1.05;margin-top:10px}
+.sh .more{font-size:13px;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:4px;white-space:nowrap}
+
+/* Product grid */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.card .ph{position:relative;aspect-ratio:3/4;border-radius:22px;overflow:hidden;background:var(--nude);margin-bottom:16px}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.card:hover .ph img{transform:scale(1.04)}
+.tag{position:absolute;top:14px;left:14px;background:#fff;color:var(--navy);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;border-radius:999px;font-weight:600;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.quick{position:absolute;left:14px;right:14px;bottom:14px;background:var(--navy);color:var(--bg);text-align:center;border-radius:999px;padding:12px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;opacity:0;transform:translateY(8px);transition:.25s}
+.card:hover .quick{opacity:1;transform:none}
+.pname{font-family:var(--serif);font-size:22px;font-weight:300}
+.pmeta{font-size:13px;opacity:.62;margin:4px 0 8px}
+.price{font-size:15.5px;font-weight:600}
+.price small{font-weight:400;opacity:.6;font-size:13px}
+
+/* Categories */
+.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.cat{display:flex;align-items:center;gap:18px;background:var(--nude);border-radius:22px;padding:18px;transition:transform .2s}
+.cat:hover{transform:translateY(-3px)}
+.cat img{width:120px;height:150px;object-fit:cover;border-radius:16px;flex:none}
+.cat h3{font-family:var(--serif);font-weight:300;font-size:26px;margin-bottom:4px}
+.cat span{display:block;font-size:13px;opacity:.7;margin-bottom:10px}
+.cat em{font-style:normal;font-size:13px;font-weight:600;color:var(--terra)}
+
+/* Laser band */
+.laser{background:var(--navy);color:#EDE3DB}
+.laser .eyebrow{color:#E2B9A4}
+.laser .sh .more{color:#EDE3DB}
+.laser .pmeta{opacity:.7}
+.laser .card .ph{background:#2c3c4a}
+.grid6{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.grid6 .pname{font-size:18px}
+
+/* Steps */
+.steps{background:var(--nude)}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.step b{font-family:var(--serif);font-weight:300;font-size:56px;color:var(--terra);display:block}
+.step h3{font-family:var(--serif);font-weight:300;font-size:27px;margin:4px 0 8px}
+.step p{font-size:15.5px;line-height:1.6;opacity:.75}
+
+/* Quote */
+.quote{background:var(--quote);text-align:center}
+.quote p{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(24px,3vw,38px);line-height:1.35;max-width:900px;margin:0 auto}
+.quote span{display:block;margin-top:22px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;opacity:.7}
+.quote .note{display:inline-block;margin-top:14px;font-size:12px;background:#fff;padding:4px 10px;border-radius:999px;letter-spacing:0;text-transform:none;opacity:.8}
+
+/* Instagram CTA */
+.ig{text-align:center;padding:72px 0}
+.ig h2{font-family:var(--serif);font-weight:300;font-size:clamp(30px,3.6vw,44px);margin:10px 0 22px}
+
+/* Footer */
+footer{background:var(--navy);color:#EDE3DB;padding:64px 0 32px;font-size:14px;line-height:2}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px}
+footer h5{font-size:12px;letter-spacing:.24em;text-transform:uppercase;margin-bottom:12px;opacity:.6;font-weight:600}
+footer a{opacity:.85}footer a:hover{opacity:1}
+.wa{display:inline-flex;gap:10px;align-items:center;background:#25D366;color:#0b2e17 !important;opacity:1 !important;padding:10px 18px;border-radius:999px;font-weight:600;line-height:1.2}
+.legal{border-top:1px solid rgba(255,255,255,.15);margin-top:40px;padding-top:20px;display:flex;justify-content:space-between;font-size:12px;opacity:.6}
+.fab{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px -8px rgba(0,0,0,.4);z-index:30}
+
+/* Mobile menu */
+.mnav{display:none}
+@media (max-width:980px){
+  nav,.hright .txt{display:none}
+  .burger{display:block}
+  .mnav.open{display:flex;flex-direction:column;gap:16px;padding:18px 24px 24px;border-top:1px solid var(--line);font-size:16px}
+  .grid{grid-template-columns:repeat(2,1fr);gap:16px}
+  .grid6{grid-template-columns:repeat(3,1fr)}
+  .trust .wrap{grid-template-columns:1fr 1fr}
+  .cats,.sgrid{grid-template-columns:1fr}
+  footer .cols{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .hero .wrap{grid-template-columns:1fr;text-align:center;padding-top:36px;padding-bottom:48px}
+  .hero p{margin-left:auto;margin-right:auto}
+  .hero-img{order:-1;min-height:380px}
+  section{padding:60px 0}
+  .sh{flex-direction:column;align-items:flex-start}
+  .grid6{grid-template-columns:repeat(2,1fr)}
+  .quick{display:none}
+  .pname{font-size:19px}
+  .legal{flex-direction:column;gap:4px}
+}
+@media (max-width:480px){.trust .wrap,footer .cols{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div id="imgwarn" style="display:none;background:#C27C68;color:#fff;text-align:center;font-size:13px;padding:8px 12px">Algunas fotos no pudieron cargar desde la tienda. Recarga la página.</div>
+<div class="demo">Propuesta de rediseño para Saturnino Creaciones · los productos enlazan a la tienda real</div>
+<div class="bar">Envío gratis a todo Chile sobre $60.000 · Confección artesanal en 5 días hábiles</div>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#">Saturnino<small>CREACIONES</small></a>
+    <nav>
+      <a class="on" href="#">Inicio</a>
+      <a href="#carteras">Carteras</a>
+      <a href="#laser">Grabado láser</a>
+      <a href="#personaliza">Personalizados</a>
+      <a href="https://saturninocreaciones.com/contact" target="_blank">Contacto</a>
+    </nav>
+    <div class="hright">
+      <a class="txt" href="https://www.instagram.com/saturnino.creaciones" target="_blank">Instagram</a>
+      <a class="cart" href="https://saturninocreaciones.com/cart" target="_blank">Carro (0)</a>
+      <button class="burger" aria-label="Menú" onclick="document.querySelector('.mnav').classList.toggle('open')">☰</button>
+    </div>
+  </div>
+  <div class="mnav">
+    <a href="#carteras">Carteras</a><a href="#laser">Grabado láser</a><a href="#personaliza">Personalizados</a>
+    <a href="https://saturninocreaciones.com/contact" target="_blank">Contacto</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Nueva temporada</div>
+      <h1>Suave, natural<br><i>y tuya</i></h1>
+      <p>Carteras tejidas a mano con asas de madera grabadas con láser. Piezas únicas, confeccionadas por encargo en Chile.</p>
+      <a class="btn" href="#carteras">Ver colección</a>
+      <a class="btn ghost" href="https://api.whatsapp.com/send?phone=56956749191&text=Hola!%20Quiero%20personalizar%20una%20cartera" target="_blank">Personalizar la mía</a>
+      <div class="rating">★★★★★ &nbsp;Clientas en todo Chile · Pago seguro Webpay</div>
+    </div>
+    <div class="hero-img">
+      <img class="side s1" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908363/thumb/760/1013?1763615116" alt="Modelo Aurora">
+      <img class="main" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/70131179/thumb/760/1013?1764081582" alt="Modelo Carmesí">
+      <img class="side s2" src="https://cdnx.jumpseller.com/saturnino-creaciones/image/70144388/thumb/760/1013?1764116839" alt="Modelo Runa">
+    </div>
+  </div>
+</div>
+
+<!-- TRUST -->
+<div class="trust">
+  <div class="wrap">
+    <div class="ti"><svg viewBox="0 0 24 24"><path d="M7 11V5a1.5 1.5 0 0 1 3 0v5M10 10V3.5a1.5 1.5 0 0 1 3 0V10M13 10V4.5a1.5 1.5 0 0 1 3 0V12M16 8.5a1.5 1.5 0 0 1 3 0V14a7 7 0 0 1-7 7h-1a6 6 0 0 1-5-3l-2.5-4a1.5 1.5 0 0 1 2.5-1.6L7 14"/></svg><div><b>Hecho a mano en Chile</b><span>Cada pieza se teje por encargo</span></div></div>
+    <div class="ti"><svg viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/></svg><div><b>Personalizable</b><span>Grabado láser con tu nombre o diseño</span></div></div>
+    <div class="ti"><svg viewBox="0 0 24 24"><path d="M3 6h11v9H3zM14 9h4l3 3v3h-7"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg><div><b>Envío a todo Chile</b><span>Gratis sobre $60.000</span></div></div>
+    <div class="ti"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><div><b>Pago seguro Webpay</b><span>Crédito, débito y transferencia</span></div></div>
+  </div>
+</div>
+
+<!-- CARTERAS -->
+<section id="carteras">
+  <div class="wrap">
+    <div class="sh">
+      <div><div class="eyebrow">Colección carteras</div><h2>Las favoritas<br>de la temporada</h2></div>
+      <a class="more" href="https://saturninocreaciones.com/carteras" target="_blank">Ver todas las carteras</a>
+    </div>
+    <div class="grid" id="bags"></div>
+  </div>
+</section>
+
+<!-- CATEGORÍAS -->
+<section style="padding-top:0">
+  <div class="wrap cats">
+    <a class="cat" href="https://saturninocreaciones.com/carteras" target="_blank">
+      <img src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908373/thumb/306/407?1763615209" alt="Carteras tejidas">
+      <div><h3>Carteras tejidas</h3><span>Desde $23.000</span><em>Ver colección →</em></div>
+    </a>
+    <a class="cat" href="https://saturninocreaciones.com/grabados-laser" target="_blank">
+      <img src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908435/thumb/306/407?1763615950" alt="Grabado láser">
+      <div><h3>Grabado láser</h3><span>Desde $2.000</span><em>Ver colección →</em></div>
+    </a>
+    <a class="cat" href="https://saturninocreaciones.com/all" target="_blank">
+      <img src="https://cdnx.jumpseller.com/saturnino-creaciones/image/69908426/thumb/306/407?1763615870" alt="Regalos personalizados">
+      <div><h3>Regalos personalizados</h3><span>Desde $3.000</span><em>Ver todo →</em></div>
+    </a>
+  </div>
+</section>
+
+<!-- LÁSER -->
+<section class="laser" id="laser">
+  <div class="wrap">
+    <div class="sh">
+      <div><div class="eyebrow">Precisión láser</div><h2>Grabados que<br>cuentan tu historia</h2></div>
+      <a class="more" href="https://saturninocreaciones.com/grabados-laser" target="_blank">Ver grabados</a>
+    </div>
+    <div class="grid6" id="laserGrid"></div>
+  </div>
+</section>
+
+<!-- PASOS -->
+<section class="steps" id="personaliza">
+  <div class="wrap">
+    <div class="sh">
+      <div><div class="eyebrow">Personaliza la tuya</div><h2>Así de simple</h2></div>
+      <a class="more" href="https://api.whatsapp.com/send?phone=56956749191&text=Hola!%20Quiero%20un%20dise%C3%B1o%20a%20medida" target="_blank">Solicitar diseño a medida</a>
+    </div>
+    <div class="sgrid">
+      <div class="step"><b>01</b><h3>Elige tu modelo</h3><p>Carmesí, Runa, Aurora… o pídenos uno nuevo.</p></div>
+      <div class="step"><b>02</b><h3>Personaliza</h3><p>Agrega etiqueta Signature, llavero corazón o grabado con tu nombre.</p></div>
+      <div class="step"><b>03</b><h3>La tejemos para ti</h3><p>5 días hábiles de confección y despacho a todo Chile.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEÑA -->
+<section class="quote">
+  <div class="wrap">
+    <p>“Aquí va una reseña real de una clienta, por ejemplo copiada de Instagram o WhatsApp.”</p>
+    <span>— Nombre, Ciudad</span>
+    <div class="note">Espacio reservado: usar solo reseñas reales con permiso</div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<div class="ig">
+  <div class="wrap">
+    <div class="eyebrow">Comunidad</div>
+    <h2>Síguenos en @saturnino.creaciones</h2>
+    <a class="btn ghost" href="https://www.instagram.com/saturnino.creaciones" target="_blank">Ir a Instagram</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><div class="logo">Saturnino<small>CREACIONES</small></div>
+        <p style="margin-top:16px;opacity:.75;max-width:300px;line-height:1.7">Carteras tejidas a mano y piezas grabadas con láser. Diseño chileno, hecho por encargo.</p></div>
+      <div><h5>Tienda</h5><a href="#carteras">Carteras</a><br><a href="#laser">Grabado láser</a><br><a href="#personaliza">Personalizados</a></div>
+      <div><h5>Ayuda</h5>
+        <a href="https://saturninocreaciones.com/terminos-y-condiciones" target="_blank">Términos y condiciones</a><br>
+        <a href="https://saturninocreaciones.com/politica-de-reembolso" target="_blank">Cambios y devoluciones</a><br>
+        <a href="https://saturninocreaciones.com/politica-de-privacidad" target="_blank">Privacidad</a></div>
+      <div><h5>Hablemos</h5>
+        <a class="wa" href="https://api.whatsapp.com/send?phone=56956749191&text=Hola%20Saturnino%20Creaciones!" target="_blank">WhatsApp +56 9 5674 9191</a><br>
+        <a href="https://www.instagram.com/saturnino.creaciones" target="_blank">@saturnino.creaciones</a><br>
+        <span style="opacity:.7">Pagos con Webpay Plus</span></div>
+    </div>
+    <div class="legal"><span>© 2026 Saturnino Creaciones</span><span>Hecho con dedicación en Chile</span></div>
+  </div>
+</footer>
+
+<a class="fab" href="https://api.whatsapp.com/send?phone=56956749191&text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" aria-label="WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>
+</a>
+
+<script>
+function imgFallback(img){
+  if(!img.dataset.r){img.dataset.r=1;img.src=img.src.split("?")[0];return;}
+  img.classList.add("fail");
+  const ph=img.closest(".ph"); if(ph){ph.classList.add("nofoto");ph.dataset.n=img.alt;}
+  document.getElementById("imgwarn").style.display="block";
+}
+document.addEventListener("error",e=>{if(e.target.tagName==="IMG")imgFallback(e.target)},true);
+const IMG = (id,ts,w=760,h=1013)=>`https://cdnx.jumpseller.com/saturnino-creaciones/image/${id}/thumb/${w}/${h}?${ts}`;
+const SHOP = "https://saturninocreaciones.com/";
+
+const bags = [
+  ["Modelo Carmesí","modelo-carmesi",70131179,1764081582,40000,"Más vendido"],
+  ["Modelo Runa","modelo-runa",70144388,1764116839,45000,"Nuevo"],
+  ["Modelo Catrina","modelo-catrina",69957630,1763735918,50000,""],
+  ["Modelo Aurora","modelo-aurora",69908363,1763615116,60000,""],
+  ["Modelo Aura","modelo-aura",69908385,1763615361,57000,""],
+  ["Modelo Enredados","modelo-enredados",69908373,1763615209,66000,"Edición especial"],
+  ["Modelo Coral","modelo-carmesi-copiar",70807371,1766151022,45000,"Nuevo"],
+  ["Modelo Sunny","modelu-sunny",69908400,1763615540,40000,""],
+];
+const laser = [
+  ["Lámpara Granito Café","lampara-de-madera-grabada",69908435,1763615950,60000,false],
+  ["Porta vinos Nintai","porta-vinos-nintai",69908423,1763615814,35000,false],
+  ["Caja de madera personalizada","caja-de-madera",69908426,1763615870,10000,true],
+  ["Set 6 porta vasos","porta-vasos-personalizados",69908466,1764209750,4000,true],
+  ["Tarjetas de presentación","tarjetas-de-presentacionnegocios",69908453,1763616190,2000,true],
+  ["Porta tarjetas","porta-tarjetas",69908457,1763616246,3000,false],
+];
+const clp = n => "$" + n.toLocaleString("es-CL");
+
+document.getElementById("bags").innerHTML = bags.map(([n,slug,id,ts,p,tag]) => `
+  <a class="card" href="${SHOP+slug}" target="_blank">
+    <div class="ph">${tag?`<span class="tag">${tag}</span>`:""}
+      <img loading="lazy" src="${IMG(id,ts)}" alt="${n}"><span class="quick">Ver producto</span></div>
+    <div class="pname">${n}</div>
+    <div class="pmeta">Tejida a mano · asa de madera grabada</div>
+    <div class="price"><small>desde</small> ${clp(p)}</div>
+  </a>`).join("");
+
+document.getElementById("laserGrid").innerHTML = laser.map(([n,slug,id,ts,p,desde]) => `
+  <a class="card" href="${SHOP+slug}" target="_blank">
+    <div class="ph"><img loading="lazy" src="${IMG(id,ts,306,407)}" alt="${n}"></div>
+    <div class="pname">${n}</div>
+    <div class="price">${desde?"<small>desde</small> ":""}${clp(p)}</div>
+  </a>`).join("");
+</script>
+</body>
+</html>
