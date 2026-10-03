@@ -1,5 +1,8 @@
 # Pruebas Páginas Web
 
-- `saturnino/` — Demo de rediseño para saturninocreaciones.com (propuesta Nude Minimal)
-- `saturnino/propuestas/` — 4 propuestas visuales
-- `saturnino/kit/` — CSS y bloques HTML para aplicar en Jumpseller
+## Saturnino Creaciones
+- `saturnino/` — portada con las 8 propuestas navegables
+- `saturnino/disenos/` — cada propuesta (1–8)
+- `saturnino/kit/` — código para aplicar en Jumpseller
+  - **Propuesta elegida: 08 Malva Boutique** → `saturnino-malva.css` + `saturnino-malva-bloques.html` (vista de prueba: `prueba-malva.html`)
+  - Anterior (04 Nude): `saturnino-nude.css` + `saturnino-bloques.html`
